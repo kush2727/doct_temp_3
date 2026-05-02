@@ -22,7 +22,6 @@ function App() {
     setIsMenuOpen(false)
   }
 
-  // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -227,11 +226,10 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border border-cyan-500/30 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
                   <img 
-                    src="/doctor-image.png" 
-                    alt="Dr. Premium" 
+                    src="/doct_temp_3/doctor-image.png" 
+                    alt="Dr. Maheshwari M" 
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      // Fallback to SVG if image fails to load
                       e.currentTarget.style.display = 'none'
                     }}
                   />
@@ -285,7 +283,7 @@ function App() {
                 
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border border-cyan-500/30 overflow-hidden">
                   <img 
-                    src="/doctor-image.png" 
+                    src="/doct_temp_3/doctor-image.png" 
                     alt="Dr. Maheshwari M" 
                     className="w-full h-full object-cover"
                   />
@@ -317,7 +315,7 @@ function App() {
                   key={i}
                   className="p-6 bg-slate-800/50 border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition"
                   variants={fadeInUp}
-                  whileHover={{ scale: 1.05, y: -5, borderColor: 'rgba(34, 211, 238, 0.5)' }}
+                  whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <h3 className="text-xl font-bold mb-2">{item.icon} {item.title}</h3>
                   <p className="text-gray-400">{item.desc}</p>
@@ -415,11 +413,9 @@ function App() {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.02, x: 10 }}
               >
-                <svg className="w-24 h-24 rounded-lg flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="100" height="100" fill={exp.color}/>
-                  <circle cx="50" cy="30" r="15" fill="#e5e7eb"/>
-                  <ellipse cx="50" cy="65" rx="25" ry="20" fill="#e5e7eb"/>
-                </svg>
+                <div className="w-24 h-24 rounded-lg flex-shrink-0 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center text-3xl">
+                  {i === 0 ? '🏥' : '🏢'}
+                </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-2">{exp.title}</h3>
                   <p className="text-cyan-400 font-semibold mb-1">{exp.org}</p>
@@ -465,7 +461,7 @@ function App() {
                 key={i}
                 className="p-8 bg-slate-800/50 border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition"
                 variants={fadeInUp}
-                whileHover={{ y: -10, borderColor: 'rgba(34, 211, 238, 0.5)' }}
+                whileHover={{ y: -10 }}
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -480,14 +476,10 @@ function App() {
                   ))}
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                  "Exceptional care and professionalism. Dr. Premium truly cares about patient wellness and recovery."
+                  "Exceptional care and professionalism. Dr. Maheshwari truly cares about patient wellness and recovery."
                 </p>
                 <div className="flex items-center gap-4">
-                  <svg className="w-12 h-12 rounded-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="50" fill={testimonial.color}/>
-                    <circle cx="50" cy="35" r="15" fill="#e5e7eb"/>
-                    <ellipse cx="50" cy="70" rx="25" ry="20" fill="#e5e7eb"/>
-                  </svg>
+                  <div className="w-12 h-12 rounded-full flex-shrink-0" style={{ backgroundColor: testimonial.color }}></div>
                   <div>
                     <p className="font-bold text-cyan-400">{testimonial.name}</p>
                     <p className="text-sm text-gray-500">{testimonial.role}</p>
@@ -580,7 +572,7 @@ function App() {
             </motion.div>
             <motion.div variants={fadeInUp}>
               <h4 className="font-bold mb-4 text-cyan-400">Contact</h4>
-              <p className="text-gray-400">📧 contact@drpremium.com</p>
+              <p className="text-gray-400">📧 contact@drmaheshwari.com</p>
               <p className="text-gray-400">📞 +1 (555) 123-4567</p>
             </motion.div>
             <motion.div variants={fadeInUp}>
