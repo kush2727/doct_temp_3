@@ -21,6 +21,8 @@ jobs:
       
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE_PATH: /doct_temp_3/
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
