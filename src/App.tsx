@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ExternalLink, Linkedin, Mail, ArrowRight, Star } from 'lucide-react'
+import { Menu, X, Linkedin, Mail, ArrowRight } from 'lucide-react'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,12 +31,6 @@ function App() {
 
   const fadeInLeft = {
     initial: { opacity: 0, x: -30 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.8, ease: 'easeOut' }
-  }
-
-  const fadeInRight = {
-    initial: { opacity: 0, x: 30 },
     animate: { opacity: 1, x: 0 },
     transition: { duration: 0.8, ease: 'easeOut' }
   }

@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/doct_temp_3/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -14,17 +15,6 @@ export default defineConfig({
       '@types': path.resolve(__dirname, './src/types'),
       '@data': path.resolve(__dirname, './src/data'),
       '@styles': path.resolve(__dirname, './src/styles'),
-    },
-  },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'three': ['three'],
-          'framer-motion': ['framer-motion'],
-          'react-spring': ['react-spring'],
-        },
-      },
     },
   },
 })
