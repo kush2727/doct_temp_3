@@ -50,9 +50,9 @@ function App() {
   }
 
   return (
-    <div className="bg-slate-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Animated background gradient */}
-      <div className="fixed inset-0 -z-10">
+      <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
         <motion.div 
           className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
@@ -226,7 +226,7 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border border-cyan-500/30 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10"></div>
                   <img 
-                    src="/doct_temp_3/doctor-image.png" 
+                    src="./doctor-image.png" 
                     alt="Dr. Maheshwari M" 
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -247,7 +247,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 md:px-8">
+      <section id="about" className="py-20 px-4 md:px-8 bg-slate-900/30">
         <motion.div 
           className="max-w-7xl mx-auto"
           initial="initial"
@@ -283,7 +283,7 @@ function App() {
                 
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border border-cyan-500/30 overflow-hidden">
                   <img 
-                    src="/doct_temp_3/doctor-image.png" 
+                    src="./doctor-image.png" 
                     alt="Dr. Maheshwari M" 
                     className="w-full h-full object-cover"
                   />
@@ -375,7 +375,7 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 md:px-8">
+      <section id="experience" className="py-20 px-4 md:px-8 bg-slate-900/30">
         <motion.div 
           className="max-w-7xl mx-auto"
           initial="initial"
@@ -396,14 +396,12 @@ function App() {
                 title: 'Senior Physician & Department Head', 
                 org: 'Premium Medical Center', 
                 year: '2015 - Present', 
-                color: '#3b82f6',
                 points: ['Leading 20+ healthcare professionals', 'Advanced diagnostic protocols', 'Mentoring junior physicians'] 
               },
               { 
                 title: 'Attending Physician', 
                 org: 'City General Hospital', 
                 year: '2010 - 2015', 
-                color: '#06b6d4',
                 points: ['100+ patients monthly', 'Multidisciplinary collaboration', 'Medical research'] 
               }
             ].map((exp, i) => (
@@ -453,9 +451,9 @@ function App() {
             variants={staggerContainer}
           >
             {[
-              { name: 'Sarah Johnson', role: 'Patient', color: '#3b82f6' },
-              { name: 'Michael Chen', role: 'Patient', color: '#06b6d4' },
-              { name: 'Emma Davis', role: 'Patient', color: '#8b5cf6' }
+              { name: 'Sarah Johnson', role: 'Patient' },
+              { name: 'Michael Chen', role: 'Patient' },
+              { name: 'Emma Davis', role: 'Patient' }
             ].map((testimonial, i) => (
               <motion.div 
                 key={i}
@@ -465,21 +463,14 @@ function App() {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
-                    <motion.span 
-                      key={j}
-                      className="text-yellow-400 text-lg"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 0.5, delay: j * 0.1 }}
-                    >
-                      ★
-                    </motion.span>
+                    <span key={j} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed">
                   "Exceptional care and professionalism. Dr. Maheshwari truly cares about patient wellness and recovery."
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full flex-shrink-0" style={{ backgroundColor: testimonial.color }}></div>
+                  <div className="w-12 h-12 rounded-full flex-shrink-0 bg-gradient-to-br from-blue-400 to-cyan-400"></div>
                   <div>
                     <p className="font-bold text-cyan-400">{testimonial.name}</p>
                     <p className="text-sm text-gray-500">{testimonial.role}</p>
@@ -492,7 +483,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 md:px-8">
+      <section id="contact" className="py-20 px-4 md:px-8 bg-slate-900/30">
         <motion.div 
           className="max-w-2xl mx-auto"
           initial="initial"
@@ -512,94 +503,75 @@ function App() {
             variants={fadeInUp}
           >
             <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <motion.input 
+              <input 
                 type="text" 
                 placeholder="Full Name" 
                 className="w-full px-4 py-3 bg-slate-900/50 border border-cyan-500/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition"
-                whileFocus={{ scale: 1.02 }}
               />
-              <motion.input 
+              <input 
                 type="email" 
                 placeholder="Email" 
                 className="w-full px-4 py-3 bg-slate-900/50 border border-cyan-500/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition"
-                whileFocus={{ scale: 1.02 }}
               />
             </div>
-            <motion.input 
+            <input 
               type="tel" 
               placeholder="Phone" 
               className="w-full px-4 py-3 bg-slate-900/50 border border-cyan-500/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition mb-6"
-              whileFocus={{ scale: 1.02 }}
             />
-            <motion.textarea 
+            <textarea 
               placeholder="Message" 
               rows={4} 
               className="w-full px-4 py-3 bg-slate-900/50 border border-cyan-500/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition mb-6"
-              whileFocus={{ scale: 1.02 }}
-            ></motion.textarea>
-            <motion.button 
+            ></textarea>
+            <button 
               type="submit" 
               className="w-full px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
             >
               Send Message
-            </motion.button>
+            </button>
           </motion.form>
         </motion.div>
       </section>
 
       {/* Footer */}
-      <motion.footer 
-        className="border-t border-cyan-500/20 py-12 px-4 md:px-8"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
+      <footer className="border-t border-cyan-500/20 py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <motion.div variants={fadeInUp}>
+            <div>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">Dr. Maheshwari M</h3>
               <p className="text-gray-400">Premium healthcare services for your wellness</p>
-            </motion.div>
-            <motion.div variants={fadeInUp}>
+            </div>
+            <div>
               <h4 className="font-bold mb-4 text-cyan-400">Quick Links</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#about" className="hover:text-cyan-400 transition">About</a></li>
                 <li><a href="#services" className="hover:text-cyan-400 transition">Services</a></li>
                 <li><a href="#experience" className="hover:text-cyan-400 transition">Experience</a></li>
               </ul>
-            </motion.div>
-            <motion.div variants={fadeInUp}>
+            </div>
+            <div>
               <h4 className="font-bold mb-4 text-cyan-400">Contact</h4>
               <p className="text-gray-400">📧 contact@drmaheshwari.com</p>
               <p className="text-gray-400">📞 +1 (555) 123-4567</p>
-            </motion.div>
-            <motion.div variants={fadeInUp}>
+            </div>
+            <div>
               <h4 className="font-bold mb-4 text-cyan-400">Follow</h4>
               <div className="flex gap-4">
-                <motion.a 
-                  href="#" 
-                  className="text-gray-400 hover:text-cyan-400 transition"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                >
+                <a href="#" className="text-gray-400 hover:text-cyan-400 transition">
                   <Linkedin size={20} />
-                </motion.a>
-                <motion.a 
-                  href="#" 
-                  className="text-gray-400 hover:text-cyan-400 transition"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                >
+                </a>
+                <a href="#" className="text-gray-400 hover:text-cyan-400 transition">
                   <Mail size={20} />
-                </motion.a>
+                </a>
               </div>
-            </motion.div>
+            </div>
           </div>
           <div className="border-t border-cyan-500/20 pt-8 text-center text-gray-500">
             <p>&copy; 2026 Dr. Maheshwari M. All rights reserved.</p>
           </div>
         </div>
-      </motion.footer>
+      </footer>
     </div>
   )
 }
